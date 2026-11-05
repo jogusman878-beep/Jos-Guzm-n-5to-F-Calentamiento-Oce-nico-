@@ -1,0 +1,335 @@
+<html style="margin:0;padding:0;">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+(function(){
+  var s=document.createElement('style');
+  s.textContent = `
+    :root{
+      --bg:#f8fafb; --card:#ffffff; --text:#0f172a; --muted:#64748b;
+      --accent:#2d7eb5; --accent-soft:rgba(45,126,181,.14);
+      --accent2:#c85a3a; --accent2-soft:rgba(200,90,58,.14);
+      --deep:#0b3d5c; --border:rgba(15,23,42,.08);
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;}
+    .serif{font-family:'IBM Plex Serif',serif;}
+    .kicker{letter-spacing:.18em;text-transform:uppercase;font-size:11px;font-weight:600;}
+    .wave-anim{animation:wavemove 6s ease-in-out infinite;}
+    @keyframes wavemove{0%,100%{transform:translateX(0)}50%{transform:translateX(-18px)}}
+    .ray-anim{animation:raypulse 3.5s ease-in-out infinite;transform-origin:top center;}
+    @keyframes raypulse{0%,100%{opacity:.55}50%{opacity:1}}
+    .float-soft{animation:floaty 5s ease-in-out infinite;}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    .dash-flow{stroke-dasharray:6 5;animation:dashflow 1.2s linear infinite;}
+    @keyframes dashflow{to{stroke-dashoffset:-22}}
+    .num-badge{font-variant-numeric:tabular-nums;}
+    .card-hover{transition:transform .25s ease, box-shadow .25s ease;}
+    .card-hover:hover{transform:translateY(-3px);box-shadow:0 14px 34px -14px rgba(11,61,92,.28);}
+    .divider-soft{height:1px;background:var(--border);}
+    .pill{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:600;}
+  `;
+  document.head.appendChild(s);
+})();
+</script>
+<div style="background:var(--bg);box-sizing:border-box;">
+<div style="max-width:960px;margin:0 auto;padding:0 18px 40px;">
+
+  <!-- ============ HERO ============ -->
+  <div style="position:relative;overflow:hidden;border-radius:0 0 28px 28px;background:linear-gradient(160deg,#0b3d5c 0%,#145a85 45%,#2d7eb5 100%);color:#fff;padding:44px 26px 30px;margin:0 -18px;">
+    <svg style="position:absolute;left:0;right:0;bottom:-2px;width:100%;height:70px;opacity:.25" viewBox="0 0 960 70" preserveAspectRatio="none" aria-hidden="true">
+      <path class="wave-anim" d="M0,40 C160,10 320,60 480,35 C640,10 800,55 960,30 L960,70 L0,70 Z" fill="#7fd1ff"/>
+      <path class="wave-anim" style="animation-delay:-2s" d="M0,52 C180,28 340,66 520,46 C700,26 840,60 960,44 L960,70 L0,70 Z" fill="#bfe9ff" opacity=".7"/>
+    </svg>
+    <div style="position:relative;z-index:2;">
+      <span class="pill" style="background:rgba(255,255,255,.16);color:#eaf6ff;">Física · Océano y Atmósfera</span>
+      <h1 class="serif" style="font-size:clamp(28px,5vw,44px);line-height:1.12;margin:14px 0 10px;font-weight:700;">La Física del Calentamiento Oceánico</h1>
+      <p style="font-size:clamp(15px,2.4vw,19px);color:#cfe8f7;max-width:620px;margin:0 0 18px;">Cómo el océano absorbe, almacena y redistribuye el calor del planeta — y qué significa esto para nuestras costas.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <span class="pill" style="background:var(--accent2);color:#fff;">90% del calor excedente</span>
+        <span class="pill" style="background:rgba(255,255,255,.18);color:#fff;">ENOS · El Niño</span>
+        <span class="pill" style="background:rgba(255,255,255,.18);color:#fff;">Impacto local</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SECTION 1: EL OCÉANO COMO REGULADOR ============ -->
+  <div style="margin-top:34px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <span style="width:34px;height:34px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2d7eb5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </span>
+      <div>
+        <div class="kicker" style="color:var(--accent);">01 · Regulación térmica</div>
+        <h2 class="serif" style="font-size:22px;margin:2px 0 0;font-weight:700;">El océano, un gigante regulador de calor</h2>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:stretch;">
+      <!-- Stat card -->
+      <div style="flex:1 1 240px;min-width:220px;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;display:flex;flex-direction:column;justify-content:center;">
+        <div class="num-badge" style="font-size:56px;font-weight:700;color:var(--accent2);line-height:1;">90%</div>
+        <p style="margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.5;">del exceso de energía térmica por gases de efecto invernadero es <strong style="color:var(--text);">absorbido por los océanos</strong>. Sin ellos, el planeta se calentaría mucho más rápido.</p>
+        <div class="divider-soft" style="margin:16px 0;"></div>
+        <p style="margin:0;font-size:13px;color:var(--muted);line-height:1.5;">Se mide con el <strong style="color:var(--text);">Ocean Heat Content (OHC)</strong>. La mayor parte del calor se concentra en los <strong style="color:var(--accent);">primeros 700 m</strong> de la columna de agua.</p>
+      </div>
+
+      <!-- Ocean column SVG -->
+      <div style="flex:2 1 360px;min-width:280px;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;">
+        <div style="font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px;letter-spacing:.05em;">COLUMNA DE AGUA · PENETRACIÓN DEL CALOR</div>
+        <svg viewBox="0 0 420 240" style="width:100%;height:auto;display:block;" role="img" aria-label="Diagrama de columna oceánica con capas de temperatura">
+          <defs>
+            <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#7fc7ee"/>
+              <stop offset="35%" stop-color="#3a92c9"/>
+              <stop offset="62%" stop-color="#1a5f8f"/>
+              <stop offset="100%" stop-color="#0b3d5c"/>
+            </linearGradient>
+            <linearGradient id="rayg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f5b041" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#f5b041" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- sun -->
+          <circle cx="60" cy="26" r="16" fill="#f5b041"/>
+          <g class="ray-anim" stroke="#f5b041" stroke-width="2.5" stroke-linecap="round">
+            <line x1="60" y1="4" x2="60" y2="12"/><line x1="60" y1="40" x2="60" y2="48"/>
+            <line x1="38" y1="26" x2="46" y2="26"/><line x1="74" y1="26" x2="82" y2="26"/>
+            <line x1="44" y1="10" x2="50" y2="16"/><line x1="70" y1="36" x2="76" y2="42"/>
+          </g>
+          <!-- heat rays into ocean -->
+          <g class="ray-anim">
+            <polygon points="130,40 150,40 170,120 110,120" fill="url(#rayg)"/>
+            <polygon points="200,40 220,40 245,120 175,120" fill="url(#rayg)" opacity=".8"/>
+            <polygon points="290,40 310,40 335,120 265,120" fill="url(#rayg)" opacity=".6"/>
+          </g>
+          <!-- ocean body -->
+          <rect x="20" y="55" width="380" height="170" rx="10" fill="url(#sea)"/>
+          <!-- surface line -->
+          <line x1="20" y1="55" x2="400" y2="55" stroke="#bfe9ff" stroke-width="2" stroke-dasharray="4 4"/>
+          <text x="30" y="48" fill="#0b3d5c" font-size="11" font-weight="600">Superficie del mar (TSM)</text>
+          <!-- 700m marker zone (top ~55% of rect = up to y~150) -->
+          <line x1="20" y1="150" x2="400" y2="150" stroke="#ffd27a" stroke-width="2" stroke-dasharray="7 5"/>
+          <rect x="250" y="138" width="145" height="20" rx="4" fill="#0b3d5c" opacity=".85"/>
+          <text x="258" y="152" fill="#ffd27a" font-size="11" font-weight="700">0 – 700 m · mayor calor</text>
+          <!-- thermocline -->
+          <line x1="20" y1="175" x2="400" y2="175" stroke="#ffffff" stroke-width="1.5" opacity=".7"/>
+          <text x="30" y="192" fill="#eaf6ff" font-size="10.5" font-weight="600">Termoclina · caída rápida de T°</text>
+          <text x="30" y="212" fill="#bfe9ff" font-size="10.5">Aguas profundas frías</text>
+          <!-- upwelling arrow at right (Peru coast) -->
+          <g class="dash-flow" fill="none" stroke="#7ff0c8" stroke-width="2.5" stroke-linecap="round">
+            <path d="M370,215 C370,190 378,175 378,150"/>
+          </g>
+          <polygon points="378,142 371,154 385,154" fill="#7ff0c8"/>
+          <text x="300" y="225" fill="#7ff0c8" font-size="10" font-weight="600">Surgencia (upwelling)</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SECTION 2: MECANISMOS FÍSICOS ============ -->
+  <div style="margin-top:38px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <span style="width:34px;height:34px;border-radius:10px;background:var(--accent2-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c85a3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+      </span>
+      <div>
+        <div class="kicker" style="color:var(--accent2);">02 · Mecanismos físicos</div>
+        <h2 class="serif" style="font-size:22px;margin:2px 0 0;font-weight:700;">Tres efectos que transforman el océano</h2>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+      <!-- Card 1: expansion termica -->
+      <div class="card-hover" style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;border-top:4px solid var(--accent2);">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c85a3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+          <strong style="font-size:15px;">Expansión térmica</strong>
+        </div>
+        <p style="margin:0;font-size:13.5px;line-height:1.6;color:var(--muted);">Al calentarse, las moléculas de agua ganan energía cinética: vibran y chocan más, <strong style="color:var(--text);">aumentando el volumen</strong>.</p>
+        <div style="margin-top:12px;padding:10px 12px;background:var(--accent2-soft);border-radius:10px;font-size:12.5px;color:var(--text);font-weight:600;">Responsable de <span style="color:var(--accent2);">1/3 a casi 1/2</span> de la subida global del nivel del mar.</div>
+      </div>
+      <!-- Card 2: estratificacion -->
+      <div class="card-hover" style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;border-top:4px solid var(--accent);">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2d7eb5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+          <strong style="font-size:15px;">Estratificación</strong>
+        </div>
+        <p style="margin:0;font-size:13.5px;line-height:1.6;color:var(--muted);">El agua cálida superficial es más ligera. Se acentúa la separación de capas y se <strong style="color:var(--text);">frena la mezcla vertical</strong>.</p>
+        <div style="margin-top:12px;padding:10px 12px;background:var(--accent-soft);border-radius:10px;font-size:12.5px;color:var(--text);font-weight:600;">Menos oxígeno en profundidad · alteración de corrientes como la Circulación Meridional.</div>
+      </div>
+      <!-- Card 3: evaporacion -->
+      <div class="card-hover" style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;border-top:4px solid #0d9488;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+          <strong style="font-size:15px;">Evaporación y calor latente</strong>
+        </div>
+        <p style="margin:0;font-size:13.5px;line-height:1.6;color:var(--muted);">Con mayor TSM, la evaporación crece y transfiere <strong style="color:var(--text);">humedad y calor latente</strong> a la atmósfera.</p>
+        <div style="margin-top:12px;padding:10px 12px;background:rgba(13,148,136,.12);border-radius:10px;font-size:12.5px;color:var(--text);font-weight:600;">Alimenta tormentas, huracanes y lluvias torrenciales.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SECTION 3: EL NIÑO / BJERKNES ============ -->
+  <div style="margin-top:38px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <span style="width:34px;height:34px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2d7eb5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+      </span>
+      <div>
+        <div class="kicker" style="color:var(--accent);">03 · Acoplamiento océano-atmósfera</div>
+        <h2 class="serif" style="font-size:22px;margin:2px 0 0;font-weight:700;">Condiciones normales vs. El Niño (ENOS)</h2>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:16px;">
+      <!-- Normal -->
+      <div style="flex:1 1 320px;min-width:280px;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;">
+        <span class="pill" style="background:var(--accent-soft);color:var(--accent);margin-bottom:10px;">Condiciones normales</span>
+        <svg viewBox="0 0 360 170" style="width:100%;height:auto;display:block;" role="img" aria-label="Diagrama de condiciones normales en el Pacífico">
+          <rect x="0" y="0" width="360" height="70" fill="#eaf6ff"/>
+          <text x="10" y="16" font-size="10" fill="#64748b" font-weight="600">ATMÓSFERA</text>
+          <!-- trade winds -->
+          <g stroke="#2d7eb5" stroke-width="2.5" fill="none" stroke-linecap="round">
+            <path d="M40,40 L130,40"/><path d="M150,40 L240,40"/>
+          </g>
+          <polygon points="240,40 230,35 230,45" fill="#2d7eb5"/>
+          <text x="110" y="32" font-size="10" fill="#2d7eb5" font-weight="700">Vientos alisios → (E→O)</text>
+          <!-- ocean -->
+          <rect x="0" y="70" width="360" height="100" fill="#7fc7ee"/>
+          <!-- warm pool west (right) -->
+          <path d="M220,70 Q290,70 360,75 L360,120 Q290,115 220,110 Z" fill="#f5b041" opacity=".75"/>
+          <text x="270" y="95" font-size="9.5" fill="#7a4a00" font-weight="700">Pileta de agua cálida</text>
+          <!-- thermocline sloping -->
+          <path d="M0,120 Q120,125 220,140 T360,155" stroke="#0b3d5c" stroke-width="2" fill="none" stroke-dasharray="5 4"/>
+          <text x="10" y="138" font-size="9" fill="#0b3d5c" font-weight="600">Termoclina</text>
+          <!-- upwelling east (left, Peru) -->
+          <g class="dash-flow" fill="none" stroke="#0d9669" stroke-width="2.5" stroke-linecap="round">
+            <path d="M30,165 C30,150 36,140 36,120"/>
+          </g>
+          <polygon points="36,112 30,122 42,122" fill="#0d9669"/>
+          <text x="8" y="162" font-size="9" fill="#0d9669" font-weight="700">Perú</text>
+          <text x="50" y="162" font-size="9" fill="#0d9669" font-weight="600">↑ Surgencia fría y nutritiva</text>
+          <!-- rain west -->
+          <g stroke="#2d7eb5" stroke-width="1.5" stroke-linecap="round">
+            <line x1="300" y1="55" x2="296" y2="68"/><line x1="312" y1="55" x2="308" y2="68"/><line x1="324" y1="55" x2="320" y2="68"/>
+          </g>
+          <text x="285" y="50" font-size="9" fill="#2d7eb5" font-weight="600">Lluvias (oeste)</text>
+        </svg>
+        <p style="margin:10px 0 0;font-size:12.5px;line-height:1.55;color:var(--muted);">Los alisios empujan el agua cálida hacia el oeste. Frente a Perú asciende agua fría rica en nutrientes; el aire desciende y el clima es seco.</p>
+      </div>
+
+      <!-- El Niño -->
+      <div style="flex:1 1 320px;min-width:280px;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;position:relative;">
+        <span class="pill" style="background:var(--accent2-soft);color:var(--accent2);margin-bottom:10px;">Durante El Niño</span>
+        <svg viewBox="0 0 360 170" style="width:100%;height:auto;display:block;" role="img" aria-label="Diagrama de condiciones durante El Niño">
+          <rect x="0" y="0" width="360" height="70" fill="#fdeee8"/>
+          <text x="10" y="16" font-size="10" fill="#64748b" font-weight="600">ATMÓSFERA</text>
+          <!-- weak winds -->
+          <g stroke="#c85a3a" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="3 5">
+            <path d="M130,40 L40,40"/>
+          </g>
+          <polygon points="40,40 50,35 50,45" fill="#c85a3a"/>
+          <text x="100" y="32" font-size="10" fill="#c85a3a" font-weight="700">Alisios debilitados / invertidos</text>
+          <!-- ocean -->
+          <rect x="0" y="70" width="360" height="100" fill="#5fa8d3"/>
+          <!-- warm water spreads east -->
+          <path d="M60,70 Q180,68 360,72 L360,125 Q180,122 60,118 Z" fill="#f5b041" opacity=".85"/>
+          <text x="140" y="95" font-size="9.5" fill="#7a4a00" font-weight="700">Agua cálida se desplaza hacia el este (ondas de Kelvin)</text>
+          <!-- thermocline deepened east, flattened -->
+          <path d="M0,140 Q120,142 220,145 T360,148" stroke="#0b3d5c" stroke-width="2" fill="none" stroke-dasharray="5 4"/>
+          <text x="10" y="138" font-size="9" fill="#0b3d5c" font-weight="600">Termoclina hundida en el este</text>
+          <!-- blocked upwelling -->
+          <g fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round">
+            <path d="M30,165 C30,155 34,150 34,140"/>
+            <line x1="26" y1="135" x2="42" y2="145"/>
+          </g>
+          <text x="8" y="162" font-size="9" fill="#c85a3a" font-weight="700">Perú</text>
+          <text x="50" y="162" font-size="9" fill="#c85a3a" font-weight="600">Surgencia bloqueada · TSM +0.5°C+</text>
+          <!-- rain east -->
+          <g stroke="#c85a3a" stroke-width="1.5" stroke-linecap="round">
+            <line x1="50" y1="55" x2="46" y2="68"/><line x1="62" y1="55" x2="58" y2="68"/><line x1="74" y1="55" x2="70" y2="68"/>
+          </g>
+          <text x="30" y="50" font-size="9" fill="#c85a3a" font-weight="600">Lluvias torrenciales (este)</text>
+        </svg>
+        <p style="margin:10px 0 0;font-size:12.5px;line-height:1.55;color:var(--muted);">El calor viaja de regreso al este, la termoclina se hunde y se inhibe la surgencia. Las lluvias se desplazan hacia Perú y Ecuador.</p>
+      </div>
+    </div>
+
+    <!-- Bjerknes feedback -->
+    <div style="margin-top:16px;background:linear-gradient(135deg,#0b3d5c,#145a85);border-radius:18px;padding:20px 22px;color:#fff;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffd27a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+        <strong style="font-size:15px;">Retroalimentación positiva de Bjerknes</strong>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px;">
+        <span style="background:rgba(255,255,255,.14);padding:8px 12px;border-radius:10px;font-weight:600;">Océano más cálido</span>
+        <span style="color:#ffd27a;">→</span>
+        <span style="background:rgba(255,255,255,.14);padding:8px 12px;border-radius:10px;font-weight:600;">Baja presión · alisios más débiles</span>
+        <span style="color:#ffd27a;">→</span>
+        <span style="background:rgba(255,255,255,.14);padding:8px 12px;border-radius:10px;font-weight:600;">Más agua cálida hacia el este</span>
+        <span style="color:#ffd27a;">→</span>
+        <span style="background:#ffd27a;color:#0b3d5c;padding:8px 12px;border-radius:10px;font-weight:700;">El océano se calienta aún más</span>
+      </div>
+      <p style="margin:12px 0 0;font-size:12px;color:#cfe8f7;line-height:1.5;">Un ciclo que se realimenta a sí mismo hasta la madurez del evento. Monitoreo: <strong>ENFEN</strong> (Perú), <strong>NOAA</strong> y <strong>SENAMHI</strong>.</p>
+    </div>
+  </div>
+
+  <!-- ============ SECTION 4: IMPACTO LOCAL ============ -->
+  <div style="margin-top:38px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <span style="width:34px;height:34px;border-radius:10px;background:var(--accent2-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c85a3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+      </span>
+      <div>
+        <div class="kicker" style="color:var(--accent2);">04 · Impacto local</div>
+        <h2 class="serif" style="font-size:22px;margin:2px 0 0;font-weight:700;">Qué se siente en nuestras costas</h2>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;">
+      <div class="card-hover" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;">
+        <div style="width:40px;height:40px;border-radius:12px;background:var(--accent2-soft);display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c85a3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+        </div>
+        <strong style="font-size:14px;display:block;margin-bottom:6px;">Olas de calor marinas</strong>
+        <p style="margin:0;font-size:12.5px;line-height:1.55;color:var(--muted);">Eventos extremos de calor bajo el agua. Su frecuencia se ha <strong style="color:var(--text);">duplicado desde los años 70</strong>, afectando ecosistemas y pesca artesanal.</p>
+      </div>
+      <div class="card-hover" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;">
+        <div style="width:40px;height:40px;border-radius:12px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d7eb5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/><line x1="8" y1="19" x2="8" y2="21"/><line x1="12" y1="19" x2="12" y2="21"/><line x1="16" y1="19" x2="16" y2="21"/></svg>
+        </div>
+        <strong style="font-size:14px;display:block;margin-bottom:6px;">Tormentas e inundaciones</strong>
+        <p style="margin:0;font-size:12.5px;line-height:1.55;color:var(--muted);">Más evaporación alimenta huracanes y lluvias. En Perú-Ecuador: <strong style="color:var(--text);">ríos desbordados, huaicos e inundaciones</strong>.</p>
+      </div>
+      <div class="card-hover" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;">
+        <div style="width:40px;height:40px;border-radius:12px;background:rgba(13,150,105,.14);display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d9669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <strong style="font-size:14px;display:block;margin-bottom:6px;">Ecosistemas en peligro</strong>
+        <p style="margin:0;font-size:12.5px;line-height:1.55;color:var(--muted);">Aguas cálidas dañan arrecifes de coral y bosques de algas (<strong style="color:var(--text);">blanqueamiento</strong>), alterando la biodiversidad y la pesca.</p>
+      </div>
+      <div class="card-hover" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;">
+        <div style="width:40px;height:40px;border-radius:12px;background:rgba(180,83,9,.14);display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10l4-4 4 4v10M14 20v-6l4-3 4 3v6"/></svg>
+        </div>
+        <strong style="font-size:14px;display:block;margin-bottom:6px;">Erosión costera</strong>
+        <p style="margin:0;font-size:12.5px;line-height:1.55;color:var(--muted);">Expansión térmica + deshielo = <strong style="color:var(--text);">subida del nivel del mar</strong>. Se pierden playas y se vulnera infraestructura litoral.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER / COPYRIGHT ============ -->
+  <div style="margin-top:36px;padding:22px;border-radius:18px;background:var(--card);border:1px solid var(--border);text-align:center;">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;align-items:center;margin-bottom:12px;">
+      <span class="pill" style="background:var(--accent-soft);color:var(--accent);">Fuentes: ENFEN · NOAA · SENAMHI</span>
+      <span class="pill" style="background:var(--accent2-soft);color:var(--accent2);">Basado en apuntes de Física · ENOS</span>
+    </div>
+    <div class="divider-soft" style="margin:14px 0;"></div>
+    <p style="margin:0;font-size:13px;color:var(--muted);">Infografía elaborada con fines educativos</p>
+    <p class="serif" style="margin:6px 0 0;font-size:16px;font-weight:700;color:var(--deep);letter-spacing:.04em;">© GUZMÁN JOSÉ — 5to F</p>
+  </div>
+
+</div>
+</div>
+</html>
